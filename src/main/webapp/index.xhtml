@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <html>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>Prueba con Primefaces</title>
+        </h:head>
+
+        <h:body>
+            <h:form>
+                <p:panel header="Datos empleado">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Nombre :" />
+                        <p:inputText value="#{manejadorBean.nombre}"/>
+                        <h:outputLabel value="Apellido :" />
+                        <p:inputText value="#{manejadorBean.apellido}"/>
+                        <h:outputLabel value="Sueldo :" />
+                        <p:inputText value="#{manejadorBean.sueldo}"/>
+                        <h:outputLabel value="Identificacion :" />
+                        <p:inputText value="#{manejadorBean.identificacion}"/>
+                        <h:outputLabel value="Hora Ingreso :" />
+                        <p:inputText value="#{manejadorBean.horaIngreso}"/>
+                        <h:outputLabel value="Hora Salida :" />
+                        <p:inputText value="#{manejadorBean.horaSalida}"/>
+                        <h:outputLabel value="Comentario :" />
+                        <p:inputText value="#{manejadorBean.comentario}"/>
+                        <p:selectOneMenu id="mes" value="#{manejadorBean.mesActual}" label="Seleccione el mes">
+                            <f:selectItem itemLabel="ENERO" itemValue="1"/>
+                            <f:selectItem itemLabel="FEBRERO" itemValue="2"/>
+                            <f:selectItem itemLabel="MARZO" itemValue="3"/>
+                            <f:selectItem itemLabel="ABRIL" itemValue="4"/>
+                            <f:selectItem itemLabel="MAYO" itemValue="5"/>
+                            <f:selectItem itemLabel="JUNIO" itemValue="6"/>
+                            <f:selectItem itemLabel="JULIO" itemValue="7"/>
+                            <f:selectItem itemLabel="AGOSTO" itemValue="8"/>
+                            <f:selectItem itemLabel="SEPTIEMBRE" itemValue="9"/>
+                            <f:selectItem itemLabel="OCTUBRE" itemValue="10"/>
+                            <f:selectItem itemLabel="NOVIEMBRE" itemValue="11"/>
+                            <f:selectItem itemLabel="DICIEMBRE" itemValue="12"/>
+                        </p:selectOneMenu>
+                        <h:outputLabel value="Mes Actual" />
+                        <p:commandButton value="Registrar" action="#{manejadorBean.guardar()}" />
+                        <p:commandButton value="Limpiar" action="#{manejadorBean.limpiar()}" />
+                        <p:commandButton value="Borrar" action="#{manejadorBean.eliminar()}" />
+                    </h:panelGrid>  
+                </p:panel>
+            </h:form>
+        </h:body>
+    </html>
+</f:view>
+
